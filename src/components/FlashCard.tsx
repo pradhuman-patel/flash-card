@@ -2,6 +2,7 @@
 
 import { memo, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Maximize2, PenLine } from "lucide-react";
 import { CategoryBadge } from "@/components/ui";
 import type { Question } from "@/data/questions";
@@ -13,8 +14,11 @@ type FlashCardProps = {
   onEdit: (question: Question) => void;
 };
 
+/** Matches the Tailwind `sm` breakpoint: below it, tapping a card opens the full view. */
+const PHONE_WIDTH_QUERY = "(max-width: 639px)";
+
 const FACE_CLASS =
-  "flip-face flex flex-col rounded-3xl border border-line bg-card shadow-soft transition-shadow group-hover:shadow-lift";
+  "flip-face flex flex-col rounded-2xl sm:rounded-3xl border border-line bg-card shadow-soft transition-shadow group-hover:shadow-lift";
 
 function FlipHint() {
   return (
@@ -31,6 +35,7 @@ export const FlashCard = memo(function FlashCard({
   detailHref,
   onEdit,
 }: FlashCardProps) {
+  const router = useRouter();
   const [flipped, setFlipped] = useState(false);
   const hasFlipped = useRef(false);
   const frontButton = useRef<HTMLButtonElement>(null);
@@ -47,6 +52,11 @@ export const FlashCard = memo(function FlashCard({
     setFlipped((current) => !current);
   };
 
+  const handleFrontClick = () => {
+    if (window.matchMedia(PHONE_WIDTH_QUERY).matches) router.push(detailHref);
+    else flip();
+  };
+
   const label = `Q${question.number}`;
   const openLink = (
     <Link
@@ -55,39 +65,40 @@ export const FlashCard = memo(function FlashCard({
       aria-label={`Open ${label} in full view`}
       title="Open full view"
       onClick={(event) => event.stopPropagation()}
-      className="relative ml-auto grid size-9 shrink-0 place-items-center rounded-full text-faint transition-colors hover:bg-accent-soft hover:text-accent-ink"
+      className="relative ml-auto hidden size-9 shrink-0 place-items-center sm:grid rounded-full text-faint transition-colors hover:bg-accent-soft hover:text-accent-ink"
     >
       <Maximize2 className="size-4" aria-hidden />
     </Link>
   );
 
   return (
-    <div className="min-w-0">
-      <div className="mb-3 flex">
+    <div id={question.id} className="min-w-0 scroll-mt-3 md:scroll-mt-24">
+      <div className="mb-1.5 flex sm:mb-3">
         <CategoryBadge categoryId={question.categoryId} />
       </div>
-      <div className="flip-scene group h-64 transition-transform duration-200 hover:-translate-y-1 sm:h-72 md:h-80">
+      <div className="flip-scene group aspect-square transition-transform duration-200 hover:-translate-y-1 sm:aspect-auto sm:h-72 md:h-80">
         <div className="flip-inner" data-flipped={flipped}>
           {/* Front: question */}
           <div className={FACE_CLASS} inert={flipped}>
             <button
               ref={frontButton}
               type="button"
-              onClick={flip}
-              aria-label={`${label}: ${question.text} Flip to show answer.`}
-              className="absolute inset-0 cursor-pointer rounded-3xl focus-visible:-outline-offset-2"
+              onClick={handleFrontClick}
+              onPointerDown={() => router.prefetch(detailHref)}
+              aria-label={`${label}: ${question.text} Show answer.`}
+              className="absolute inset-0 cursor-pointer rounded-2xl focus-visible:-outline-offset-2 sm:rounded-3xl"
             />
-            <div className="pointer-events-none flex h-full flex-col p-3">
+            <div className="pointer-events-none flex h-full flex-col p-2 sm:p-3">
               <div className="flex items-center justify-between">
-                <span className="pl-2 text-sm font-bold text-accent-ink">
+                <span className="pl-1 text-xs font-bold text-accent-ink sm:pl-2 sm:text-sm">
                   {label}
                 </span>
                 <span className="pointer-events-auto">{openLink}</span>
               </div>
-              <p className="flex flex-1 items-center justify-center px-1 text-center text-sm font-semibold leading-snug sm:px-3 sm:text-base md:text-lg">
+              <p className="flex min-h-0 flex-1 items-center justify-center px-1 pb-3 text-center text-[13px] font-semibold leading-tight sm:px-3 sm:pb-0 sm:text-base sm:leading-snug md:text-lg">
                 {question.text}
               </p>
-              <p className="pb-1 pr-2 text-right text-xs text-faint">
+              <p className="hidden pb-1 pr-2 text-right text-xs text-faint sm:block">
                 <FlipHint />
               </p>
             </div>

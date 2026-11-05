@@ -19,12 +19,20 @@ function AdjacentLink({
   target,
   search,
   direction,
+  iconOnly = false,
 }: {
   target: Question | undefined;
   search: string;
   direction: "Previous" | "Next";
+  iconOnly?: boolean;
 }) {
-  const content = (
+  const className = iconOnly
+    ? `${NAV_CLASS} min-h-12 w-12 justify-center px-0!`
+    : NAV_CLASS;
+  const Icon = direction === "Previous" ? ChevronLeft : ChevronRight;
+  const content = iconOnly ? (
+    <Icon className="size-5" aria-hidden />
+  ) : (
     <>
       {direction === "Previous" && <ChevronLeft className="size-4" aria-hidden />}
       {direction}
@@ -34,7 +42,12 @@ function AdjacentLink({
 
   if (!target) {
     return (
-      <span aria-disabled className={`${NAV_CLASS} cursor-not-allowed opacity-40`}>
+      <span
+        role="link"
+        aria-disabled
+        aria-label={`${direction} question`}
+        className={`${className} cursor-not-allowed opacity-40`}
+      >
         {content}
       </span>
     );
@@ -43,7 +56,7 @@ function AdjacentLink({
     <Link
       href={`/questions/${target.id}${search}`}
       aria-label={`${direction} question: Q${target.number}`}
-      className={`${NAV_CLASS} hover:shadow-lift`}
+      className={`${className} hover:shadow-lift`}
     >
       {content}
     </Link>
@@ -66,13 +79,15 @@ export function QuestionView({ question }: { question: Question }) {
   const index = sequence.findIndex((q) => q.id === question.id);
 
   const answer = answers?.[question.id] ?? "";
+  // Returning lands on the last question viewed, not the top of the list.
+  const backHref = `/${search}#${question.id}`;
 
   return (
     <div className="flex min-h-dvh flex-col">
-      <header className="sticky top-0 z-20 border-b border-line bg-page/90 backdrop-blur">
+      <header className="sticky top-0 z-20 hidden border-b border-line bg-page/90 backdrop-blur sm:block">
         <div className="mx-auto flex max-w-3xl items-center gap-3 px-4 py-3 sm:px-6">
           <Link
-            href={`/${search}`}
+            href={backHref}
             className={`${NAV_CLASS} shrink-0 hover:shadow-lift`}
           >
             <ArrowLeft className="size-4" aria-hidden />
@@ -93,19 +108,31 @@ export function QuestionView({ question }: { question: Question }) {
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-6 sm:px-6 md:py-10">
+      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-3 sm:px-6 sm:py-6 md:py-10">
         <StorageWarning />
-        <p className="text-sm font-bold text-accent-ink">Q{question.number}</p>
-        <h1 className="mt-1 text-2xl font-bold leading-tight md:text-3xl">
+        <div className="flex items-center gap-2">
+          <p className="shrink-0 text-sm font-bold text-accent-ink">
+            Q{question.number}
+          </p>
+          <div className="flex min-w-0 flex-1 sm:hidden">
+            <CategoryBadge categoryId={question.categoryId} />
+          </div>
+          <p className="shrink-0 text-xs text-muted sm:hidden">
+            {index + 1} of {sequence.length}
+          </p>
+        </div>
+        <h1 className="mt-2 text-xl font-bold leading-tight sm:mt-1 sm:text-2xl md:text-3xl">
           {question.text}
         </h1>
 
-        <h2 className="mt-8 text-lg font-semibold text-muted">Answer:</h2>
+        <h2 className="mt-3 text-sm font-semibold text-muted sm:mt-8 sm:text-lg">
+          Answer:
+        </h2>
 
         {!answers ? (
           <div aria-busy className="mt-3 min-h-40" />
         ) : answer ? (
-          <div className="mt-3 text-base leading-[1.8] break-words whitespace-pre-wrap md:text-lg">
+          <div className="mt-1 text-[15px] leading-relaxed break-words whitespace-pre-wrap sm:mt-3 sm:text-base sm:leading-[1.8] md:text-lg">
             {answer}
           </div>
         ) : (
@@ -126,7 +153,39 @@ export function QuestionView({ question }: { question: Question }) {
         aria-label="Question navigation"
         className="sticky bottom-0 border-t border-line bg-page/90 backdrop-blur"
       >
-        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+        {/* Phones: everything within thumb reach. */}
+        <div className="flex items-center gap-2 p-3 sm:hidden">
+          <Link
+            href={backHref}
+            className={`${NAV_CLASS} min-h-12 shrink-0 hover:shadow-lift`}
+          >
+            <ArrowLeft className="size-4" aria-hidden />
+            Back
+          </Link>
+          <AdjacentLink
+            target={sequence[index - 1]}
+            search={search}
+            direction="Previous"
+            iconOnly
+          />
+          <button
+            type="button"
+            onClick={() => setIsEditing(true)}
+            disabled={!answers}
+            className="flex min-h-12 min-w-0 flex-1 items-center justify-center gap-2 rounded-2xl bg-accent text-sm font-semibold text-white shadow-soft transition-opacity hover:opacity-90"
+          >
+            <PenLine className="size-4" aria-hidden />
+            Edit
+          </button>
+          <AdjacentLink
+            target={sequence[index + 1]}
+            search={search}
+            direction="Next"
+            iconOnly
+          />
+        </div>
+
+        <div className="mx-auto hidden max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:flex sm:px-6">
           <AdjacentLink
             target={sequence[index - 1]}
             search={search}
