@@ -1,25 +1,25 @@
-import { QUESTIONS } from "@/data/questions";
+import { DEFAULT_ANSWERS } from "@/data/questions";
 
 export type Answers = Record<string, string>;
 
-const STORAGE_KEY = "aiml-flashcards:answers:v1";
+const STORAGE_KEY = "aiml-flashcards:answers:v2";
+const LEGACY_STORAGE_KEY = "aiml-flashcards:answers:v1";
 const CORRUPT_BACKUP_KEY = `${STORAGE_KEY}:unreadable-backup`;
 
 let cache: Answers | null = null;
 let warning: string | null = null;
 const listeners = new Set<() => void>();
 
-function blankAnswers(): Answers {
-  return Object.fromEntries(QUESTIONS.map((q) => [q.id, ""]));
-}
-
-/** Returns every question's answer from a stored value, or null if it isn't an answers object. */
+/**
+ * Returns every question's answer from a stored value, or null if it isn't an
+ * answers object. A stored "" stays blank, so a deleted answer doesn't come back.
+ */
 function normalize(value: unknown): Answers | null {
   if (typeof value !== "object" || value === null || Array.isArray(value)) {
     return null;
   }
   const stored = value as Record<string, unknown>;
-  const answers = blankAnswers();
+  const answers = { ...DEFAULT_ANSWERS };
   for (const id of Object.keys(answers)) {
     const answer = stored[id];
     if (typeof answer === "string") answers[id] = answer;
@@ -35,6 +35,19 @@ function parse(raw: string): Answers | null {
   }
 }
 
+/** First answers for this browser: the defaults, kept below anything typed under the old key. */
+function initialAnswers(): Answers {
+  const answers = { ...DEFAULT_ANSWERS };
+  const raw = window.localStorage.getItem(LEGACY_STORAGE_KEY);
+  const legacy = raw === null ? null : parse(raw);
+  if (legacy) {
+    for (const [id, answer] of Object.entries(legacy)) {
+      if (answer.trim() && answer !== DEFAULT_ANSWERS[id]) answers[id] = answer;
+    }
+  }
+  return answers;
+}
+
 function load(): Answers {
   warning = null;
   let raw: string | null;
@@ -43,11 +56,11 @@ function load(): Answers {
   } catch {
     warning =
       "Browser storage is unavailable, so answers can't be saved in this window.";
-    return blankAnswers();
+    return { ...DEFAULT_ANSWERS };
   }
 
   if (raw === null) {
-    const answers = blankAnswers();
+    const answers = initialAnswers();
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
     } catch {
@@ -68,7 +81,7 @@ function load(): Answers {
     warning =
       "Your saved answers couldn't be read and no backup copy could be made. Import a backup to restore them.";
   }
-  return blankAnswers();
+  return { ...DEFAULT_ANSWERS };
 }
 
 function emit() {

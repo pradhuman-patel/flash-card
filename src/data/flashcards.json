@@ -1,0 +1,795 @@
+{
+  "title": "AI/ML Engineer Interview Flashcards",
+  "version": 2,
+  "categories": [
+    {
+      "id": "category-1",
+      "name": "Introduction & Professional Background",
+      "order": 1
+    },
+    {
+      "id": "category-2",
+      "name": "Current Experience — Perplexity",
+      "order": 2
+    },
+    {
+      "id": "category-3",
+      "name": "Previous Experience — HCLTech",
+      "order": 3
+    },
+    {
+      "id": "category-4",
+      "name": "Previous Experience — Accenture",
+      "order": 4
+    },
+    {
+      "id": "category-5",
+      "name": "Education & Academic Background",
+      "order": 5
+    },
+    {
+      "id": "category-6",
+      "name": "Light Technical & AI/ML Experience",
+      "order": 6
+    },
+    {
+      "id": "category-7",
+      "name": "Logistics, Work Authorization & Availability",
+      "order": 7
+    },
+    {
+      "id": "category-8",
+      "name": "Behavioral, Motivation & Career Goals",
+      "order": 8
+    },
+    {
+      "id": "category-9",
+      "name": "Questions to Ask the Recruiter",
+      "order": 9
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "number": 1,
+      "categoryId": "category-1",
+      "question": "Tell me about yourself.",
+      "answer": "Yeah, sure. I'm an AI/ML Engineer with around five years of professional experience, mainly in Python, machine learning, NLP, and more recently generative AI, RAG, and AI agents. I started at Accenture as an ML intern and later became a full-time engineer. After moving to the U.S., I joined HCLTech, where I worked on an AI-powered developer assistant. Currently, I'm working with Perplexity through a contract vendor, focusing on multi-agent research, retrieval, and LLM evaluation. My contract ends in the next two weeks, so I'm looking for a long-term role where I can keep building impactful AI products."
+    },
+    {
+      "id": "q2",
+      "number": 2,
+      "categoryId": "category-1",
+      "question": "Can you walk me through your resume?",
+      "answer": "Absolutely. I started at Accenture in March 2020 as an ML intern, working on Python, SQL, and predictive modeling. My internship was extended, and I became a full-time ML Engineer in January 2021, working more with NLP and semantic search. After relocating to the U.S. and receiving work authorization, I joined HCLTech in June 2023 and worked on LLM-based developer tools and RAG. In January 2025, I moved to Perplexity on contract, focusing on multi-agent research and search quality. My career has evolved from traditional ML toward production generative AI."
+    },
+    {
+      "id": "q3",
+      "number": 3,
+      "categoryId": "category-1",
+      "question": "How many years of total professional experience do you have?",
+      "answer": "I have around five years of professional AI/ML experience, starting with my Accenture internship in March 2020. I had a transition period when I relocated to the U.S., so I don't describe that as uninterrupted employment."
+    },
+    {
+      "id": "q4",
+      "number": 4,
+      "categoryId": "category-1",
+      "question": "How many years of experience do you have specifically in AI and machine learning?",
+      "answer": "Pretty much my entire professional career has been focused on AI and machine learning. I started with predictive modeling and NLP, then moved toward deep learning, LLMs, RAG, and agentic AI."
+    },
+    {
+      "id": "q5",
+      "number": 5,
+      "categoryId": "category-1",
+      "question": "Can you walk me through your career journey from Accenture to HCLTech to Perplexity?",
+      "answer": "Accenture gave me my foundation in Python, machine learning, and NLP. At HCLTech, I moved into enterprise generative AI and developer-assistant applications. Perplexity gave me the chance to work more deeply on multi-agent research, retrieval quality, and LLM evaluation. Each move was a natural step toward more advanced AI engineering."
+    },
+    {
+      "id": "q6",
+      "number": 6,
+      "categoryId": "category-1",
+      "question": "What are your primary technical skills?",
+      "answer": "My strongest language is Python, and my main focus is AI/ML engineering, especially LLMs, RAG, NLP, and AI agents. I've used LangChain, LangGraph, LlamaIndex, FAISS, Pinecone, FastAPI, SQL, PostgreSQL, Redis, AWS, Azure, Docker, and Kubernetes."
+    },
+    {
+      "id": "q7",
+      "number": 7,
+      "categoryId": "category-1",
+      "question": "Which programming language are you most comfortable with?",
+      "answer": "Python is definitely my strongest language. I've used it for data processing, ML and NLP pipelines, backend APIs, and LLM applications. I'm also comfortable working with SQL."
+    },
+    {
+      "id": "q8",
+      "number": 8,
+      "categoryId": "category-1",
+      "question": "What is your strongest area within AI/ML?",
+      "answer": "I'd say my strongest area is building end-to-end LLM applications, especially RAG pipelines, intelligent search, and agent workflows. I enjoy improving retrieval quality and turning models into reliable products."
+    },
+    {
+      "id": "q9",
+      "number": 9,
+      "categoryId": "category-1",
+      "question": "What kind of projects have you primarily worked on?",
+      "answer": "Most of my work has involved intelligent search, document understanding, developer assistants, and AI-powered research systems. Earlier in my career, I also worked on predictive models and NLP classification."
+    },
+    {
+      "id": "q10",
+      "number": 10,
+      "categoryId": "category-1",
+      "question": "Have you ever worked in a startup environment?",
+      "answer": "I haven't worked at a very early-stage startup directly. Most of my experience has been at established companies and Perplexity, where the work has been fast-moving. I'm definitely open to a startup where I can take ownership and work closely with a small team."
+    },
+    {
+      "id": "q11",
+      "number": 11,
+      "categoryId": "category-1",
+      "question": "What is the most challenging project you have worked on?",
+      "answer": "One of the most challenging projects was the multi-agent research system at Perplexity. We needed query understanding, retrieval, tool calling, and generation to work together while balancing answer quality and latency. I worked on retrieval tuning, reranking, and evaluation, which helped improve both relevance and performance."
+    },
+    {
+      "id": "q12",
+      "number": 12,
+      "categoryId": "category-2",
+      "question": "What is your current role at Perplexity?",
+      "answer": "I'm currently an AI/ML Engineer at Perplexity through a contract vendor. I work on LLM research workflows, RAG pipelines, intelligent search, and multi-agent systems, mainly improving retrieval and grounded response quality."
+    },
+    {
+      "id": "q13",
+      "number": 13,
+      "categoryId": "category-2",
+      "question": "Can you explain what you are currently working on at Perplexity?",
+      "answer": "I'm working on multi-agent research workflows. When someone asks a complex question, the system breaks it into smaller tasks, retrieves information from different sources, and combines the results. My work focuses on retrieval quality, reranking, agent orchestration, and evaluation."
+    },
+    {
+      "id": "q14",
+      "number": 14,
+      "categoryId": "category-2",
+      "question": "What does your typical day look like at Perplexity?",
+      "answer": "Usually, I start by checking current tasks and recent evaluation results. Then I spend time developing in Python, experimenting with retrieval strategies, improving agent workflows, or debugging issues. I also coordinate with engineers when changes affect other components. It's a mix of development, experimentation, and performance improvement."
+    },
+    {
+      "id": "q15",
+      "number": 15,
+      "categoryId": "category-2",
+      "question": "What are your main day-to-day responsibilities?",
+      "answer": "My day-to-day work includes building and improving RAG pipelines, integrating agent tools and APIs, evaluating LLM outputs, and optimizing retrieval and latency. I also work on Python backend services and troubleshooting system behavior."
+    },
+    {
+      "id": "q16",
+      "number": 16,
+      "categoryId": "category-2",
+      "question": "Can you explain your current project in simple, nontechnical terms?",
+      "answer": "Imagine asking an AI a question that needs information from several places. Instead of guessing, our system breaks the question into parts, searches for reliable information, and puts the findings together into one answer. I help make that process faster, more accurate, and more reliable."
+    },
+    {
+      "id": "q17",
+      "number": 17,
+      "categoryId": "category-2",
+      "question": "What was your specific contribution to the project?",
+      "answer": "My main contributions were in retrieval, evaluation, and agent workflow integration. I worked with hybrid search, reranking, and query understanding to improve which sources were found. Our project results included roughly 15% better Recall@10 and around 14% improvement in grounded-response quality."
+    },
+    {
+      "id": "q18",
+      "number": 18,
+      "categoryId": "category-2",
+      "question": "What tools, technologies, and frameworks do you use daily?",
+      "answer": "I mainly use Python, LangChain, LangGraph, LlamaIndex, FAISS, Pinecone, FastAPI, and SQL. I've worked with LLMs including Sonar, GPT, Claude, and Llama, and evaluation tools such as RAGAS, LangSmith, and MLflow. On infrastructure, I've used AWS, Docker, Kubernetes, and Redis."
+    },
+    {
+      "id": "q19",
+      "number": 19,
+      "categoryId": "category-2",
+      "question": "How large is your team at Perplexity?",
+      "answer": "It's a small team of around four to five people. That helps us collaborate closely and take ownership of different parts of the project."
+    },
+    {
+      "id": "q20",
+      "number": 20,
+      "categoryId": "category-2",
+      "question": "Who do you report to, and what is your reporting structure?",
+      "answer": "I work within a small engineering team and coordinate with the person responsible for project and technical priorities. I'd prefer to keep my manager's specific details private, but I'm happy to explain how we divide work and collaborate."
+    },
+    {
+      "id": "q21",
+      "number": 21,
+      "categoryId": "category-2",
+      "question": "Which other teams do you collaborate with regularly?",
+      "answer": "My work involves coordination with AI/ML and engineering teams, especially when retrieval, backend services, and evaluation affect each other. We need to understand how a change influences both answer quality and overall system performance."
+    },
+    {
+      "id": "q22",
+      "number": 22,
+      "categoryId": "category-2",
+      "question": "Do you work independently or as part of a team?",
+      "answer": "Both, actually. I independently own certain tasks, like experiments, features, or debugging, but I collaborate closely with the team on larger changes involving multiple services."
+    },
+    {
+      "id": "q23",
+      "number": 23,
+      "categoryId": "category-2",
+      "question": "Have you managed a project from start to finish at Perplexity?",
+      "answer": "My level of ownership depends on the project. For some features, I've contributed from technical discussion through implementation, testing, and integration. Larger systems have shared ownership. I wouldn't claim I individually owned the entire platform."
+    },
+    {
+      "id": "q24",
+      "number": 24,
+      "categoryId": "category-2",
+      "question": "Have you deployed AI or machine learning models into production?",
+      "answer": "Yes, I've worked on production AI systems and deployment workflows, including inference and retrieval services, Docker containers, and AWS and Kubernetes-based environments. I've also worked on testing and monitoring deployed systems."
+    },
+    {
+      "id": "q25",
+      "number": 25,
+      "categoryId": "category-2",
+      "question": "What was the business impact of your work at Perplexity?",
+      "answer": "The main impact was improving response quality and speed. Our project results showed around 15% higher Recall@10, 14% better grounded-response quality, and about a 25% reduction in p95 research latency. That means more relevant answers with less waiting."
+    },
+    {
+      "id": "q26",
+      "number": 26,
+      "categoryId": "category-2",
+      "question": "How do you monitor models after deployment?",
+      "answer": "I look at both model quality and system health. For quality, I monitor retrieval relevance, groundedness, and evaluation scores. For system health, I check latency, errors, and resource usage. I've worked with MLflow, LangSmith, and CloudWatch to investigate changes and identify the source of problems."
+    },
+    {
+      "id": "q27",
+      "number": 27,
+      "categoryId": "category-2",
+      "question": "What was the biggest technical challenge you faced at Perplexity?",
+      "answer": "A major challenge was improving retrieval without making responses too slow. Multiple searches and reranking steps can add latency, so we experimented with retrieval strategies, caching, parallel execution, and model routing to balance quality and speed."
+    },
+    {
+      "id": "q28",
+      "number": 28,
+      "categoryId": "category-2",
+      "question": "Why are you leaving Perplexity?",
+      "answer": "My Perplexity role is contract-based, and it's coming to an end in the next two weeks. It's been a positive experience working on multi-agent systems and RAG, and I've received good feedback. I'm now looking for a long-term full-time opportunity with more end-to-end ownership."
+    },
+    {
+      "id": "q29",
+      "number": 29,
+      "categoryId": "category-2",
+      "question": "Is your current position at Perplexity full-time or contract?",
+      "answer": "It's a contract position through a vendor. I originally joined for six months, and the contract was extended afterward."
+    },
+    {
+      "id": "q30",
+      "number": 30,
+      "categoryId": "category-2",
+      "question": "Why isn't Perplexity converting your contract into a full-time position?",
+      "answer": "I initially joined through a contract vendor for six months, and the engagement was extended. I received positive feedback and appreciation from my manager. From what was communicated to me, conversion opportunities were affected by budget and headcount limitations, rather than my performance. We remain on good terms, and I'm looking for a long-term full-time role."
+    },
+    {
+      "id": "q31",
+      "number": 31,
+      "categoryId": "category-2",
+      "question": "What is the most important thing you learned at Perplexity?",
+      "answer": "The biggest lesson is that a good AI product needs much more than a powerful model. Retrieval, orchestration, evaluation, latency, and reliability all matter. I've learned how to balance those pieces in production systems."
+    },
+    {
+      "id": "q32",
+      "number": 32,
+      "categoryId": "category-3",
+      "question": "What was your role at HCLTech?",
+      "answer": "I worked as an AI Engineer at HCLTech from June 2023 to December 2024. My focus was building AI-powered developer tools using Python, LLMs, RAG, and Azure, helping developers find code, understand documentation, and troubleshoot issues."
+    },
+    {
+      "id": "q33",
+      "number": 33,
+      "categoryId": "category-3",
+      "question": "What were your main responsibilities at HCLTech?",
+      "answer": "I developed RAG pipelines, integrated LLMs, built backend APIs, and improved retrieval. I also worked on ingestion, embeddings, vector search, and evaluating generated responses, so my responsibilities covered both AI and backend engineering."
+    },
+    {
+      "id": "q34",
+      "number": 34,
+      "categoryId": "category-3",
+      "question": "What projects did you work on at HCLTech?",
+      "answer": "One major project was an AI-powered developer assistant. It helped engineers search code repositories, understand existing code, generate documentation, and troubleshoot issues. We worked with more than 50 repositories and a retrieval pipeline handling over 100,000 source files and documents."
+    },
+    {
+      "id": "q35",
+      "number": 35,
+      "categoryId": "category-3",
+      "question": "What tools and technologies did you use at HCLTech?",
+      "answer": "I used Python, LangChain, LangGraph, LlamaIndex, Hugging Face, Azure OpenAI, FAISS, Pinecone, and Azure AI Search. For backend and infrastructure, I worked with FastAPI, PostgreSQL, Redis, Kafka, Docker, Kubernetes, and Azure services."
+    },
+    {
+      "id": "q36",
+      "number": 36,
+      "categoryId": "category-3",
+      "question": "How was your experience at HCLTech different from Perplexity?",
+      "answer": "At HCLTech, my focus was enterprise AI, especially developer tools and internal code search. At Perplexity, it's more about complex research questions, multi-agent orchestration, retrieval, and evaluation. HCLTech strengthened my enterprise product skills, while Perplexity deepened my agentic AI experience."
+    },
+    {
+      "id": "q37",
+      "number": 37,
+      "categoryId": "category-3",
+      "question": "What was your biggest achievement at HCLTech?",
+      "answer": "I'm proud of the improvements we made to the developer assistant. Through chunking, embeddings, semantic search, and reranking, we improved retrieval relevance by around 25% and reduced developer investigation time by approximately 30%."
+    },
+    {
+      "id": "q38",
+      "number": 38,
+      "categoryId": "category-3",
+      "question": "Why did you leave HCLTech?",
+      "answer": "I had a positive experience at HCLTech, but toward the end of 2024 I found an opportunity at Perplexity that aligned with my interests in LLMs, advanced search, and multi-agent systems. It felt like a strong technical next step, and I left HCLTech on good terms."
+    },
+    {
+      "id": "q39",
+      "number": 39,
+      "categoryId": "category-3",
+      "question": "Was your position at HCLTech full-time or contract?",
+      "answer": "I worked at HCLTech as an AI Engineer from June 2023 through December 2024. I can clarify the formal employment arrangement based on the position's actual contract and payroll terms."
+    },
+    {
+      "id": "q40",
+      "number": 40,
+      "categoryId": "category-3",
+      "question": "How large was your team at HCLTech?",
+      "answer": "Our team had around four to five people. We collaborated closely on AI development, backend integration, and application improvements."
+    },
+    {
+      "id": "q41",
+      "number": 41,
+      "categoryId": "category-3",
+      "question": "What was the biggest challenge you faced at HCLTech?",
+      "answer": "A big challenge was searching across large codebases and documentation with different structures. Basic keyword search wasn't enough, so we improved chunking, metadata, embeddings, and reranking to make results more relevant."
+    },
+    {
+      "id": "q42",
+      "number": 42,
+      "categoryId": "category-4",
+      "question": "How did you start your professional career at Accenture?",
+      "answer": "I started at Accenture in March 2020 through its early-talent internship program. Before that, I built ML projects with guidance from a professor, joined coding competitions, and contributed to open-source work. That portfolio and networking helped me get a referral, and I cleared the technical interviews."
+    },
+    {
+      "id": "q43",
+      "number": 43,
+      "categoryId": "category-4",
+      "question": "Was your initial position at Accenture an internship or a full-time role?",
+      "answer": "I initially joined as a Machine Learning Intern for six months. It was extended for another three months, and then I moved into a full-time ML Engineer role."
+    },
+    {
+      "id": "q44",
+      "number": 44,
+      "categoryId": "category-4",
+      "question": "How did you transition from an internship to a full-time position at Accenture?",
+      "answer": "During the internship, I worked on real ML tasks involving Python, SQL, preprocessing, and model evaluation. I focused on learning quickly and delivering my work. After the internship and extension, I was offered a full-time ML Engineer position."
+    },
+    {
+      "id": "q45",
+      "number": 45,
+      "categoryId": "category-4",
+      "question": "What was your role at Accenture?",
+      "answer": "I started as a Machine Learning Intern and became a full-time ML Engineer in January 2021. My later work focused more on NLP, document intelligence, semantic search, and ML services."
+    },
+    {
+      "id": "q46",
+      "number": 46,
+      "categoryId": "category-4",
+      "question": "What were your main responsibilities at Accenture?",
+      "answer": "I prepared datasets, developed and evaluated ML and NLP models, and built Python-based services. I worked with SQL, feature engineering, experimentation, and deployment as my responsibilities grew."
+    },
+    {
+      "id": "q47",
+      "number": 47,
+      "categoryId": "category-4",
+      "question": "What AI/ML projects did you work on at Accenture?",
+      "answer": "As an intern, I worked on invoice and transaction data to understand delayed payments. Later, I worked on an enterprise knowledge platform using NLP and semantic search across documents and support tickets, including classification, intent detection, and named entity recognition."
+    },
+    {
+      "id": "q48",
+      "number": 48,
+      "categoryId": "category-4",
+      "question": "Which technologies and tools did you use at Accenture?",
+      "answer": "I used Python, Pandas, NumPy, SQL, scikit-learn, Random Forest, XGBoost, Logistic Regression, BERT, Transformers, PyTorch, and TensorFlow. My work also involved tools such as FAISS, FastAPI, Docker, AWS, and MLflow."
+    },
+    {
+      "id": "q49",
+      "number": 49,
+      "categoryId": "category-4",
+      "question": "What was your biggest learning experience at Accenture?",
+      "answer": "The biggest lesson was how ML works in a real business setting. Data quality, understanding the problem, evaluation, and reliability are just as important as the algorithm. That gave me a strong foundation for later AI engineering work."
+    },
+    {
+      "id": "q50",
+      "number": 50,
+      "categoryId": "category-4",
+      "question": "Why did you leave Accenture?",
+      "answer": "I had a good experience at Accenture, but I decided to relocate to the United States for personal and long-term career reasons. I then waited for work authorization and, once I received it, explored opportunities and joined HCLTech. It wasn't because of a problem at Accenture."
+    },
+    {
+      "id": "q51",
+      "number": 51,
+      "categoryId": "category-4",
+      "question": "How did your Accenture experience prepare you for your next role?",
+      "answer": "Accenture gave me solid fundamentals in Python, ML, NLP, APIs, and working with real datasets. That made it easier to move into enterprise LLM and RAG systems at HCLTech."
+    },
+    {
+      "id": "q52",
+      "number": 52,
+      "categoryId": "category-5",
+      "question": "Can you tell me about your educational background?",
+      "answer": "I completed an Associate of Science in Computer Science at Harper College, and I'm currently pursuing a Bachelor's in Computer Science at the University of Illinois Chicago. I've also completed professional training in machine learning and cloud technologies."
+    },
+    {
+      "id": "q53",
+      "number": 53,
+      "categoryId": "category-5",
+      "question": "What degree are you currently pursuing, and when do you expect to graduate?",
+      "answer": "I'm pursuing a Bachelor of Science in Computer Science at UIC and expect to graduate in May 2027. I study part-time, and most of my classes are in the evenings, so they don't interfere with my work."
+    },
+    {
+      "id": "q54",
+      "number": 54,
+      "categoryId": "category-5",
+      "question": "How do you balance your university coursework with your professional responsibilities?",
+      "answer": "It's manageable because my coursework is part-time and mostly in the evenings. A lot of the material overlaps with my work, including programming, databases, algorithms, and ML. I organize my schedule so my studies don't interfere with professional responsibilities."
+    },
+    {
+      "id": "q55",
+      "number": 55,
+      "categoryId": "category-5",
+      "question": "How has your computer science education helped you in your AI/ML career?",
+      "answer": "It strengthens the fundamentals behind my work, especially data structures, algorithms, databases, and software engineering. I can also apply academic concepts directly to real AI systems."
+    },
+    {
+      "id": "q56",
+      "number": 56,
+      "categoryId": "category-6",
+      "question": "How many years of Python experience do you have?",
+      "answer": "I've used Python professionally since my Accenture internship in 2020, so around six calendar years since I started, with a relocation-related gap in employment. I've used it for data analysis, ML, NLP, APIs, and LLM applications."
+    },
+    {
+      "id": "q57",
+      "number": 57,
+      "categoryId": "category-6",
+      "question": "How comfortable are you with Python?",
+      "answer": "Python is my strongest language. I'm comfortable with lists, dictionaries, tuples, sets, functions, classes, and exception handling, as well as Pandas, ML pipelines, FastAPI, and asynchronous services."
+    },
+    {
+      "id": "q58",
+      "number": 58,
+      "categoryId": "category-6",
+      "question": "Which Python libraries and frameworks do you use most frequently?",
+      "answer": "For data processing I use Pandas and NumPy; for traditional ML, scikit-learn and XGBoost; for deep learning and NLP, PyTorch, TensorFlow, and Hugging Face; and for LLM applications, LangChain, LangGraph, LlamaIndex, and FastAPI."
+    },
+    {
+      "id": "q59",
+      "number": 59,
+      "categoryId": "category-6",
+      "question": "What machine learning algorithms have you worked with?",
+      "answer": "I've worked with Logistic Regression, Random Forest, and XGBoost for prediction and classification. I've also worked with BERT and Transformer models for NLP tasks such as classification, intent detection, and entity recognition. I choose based on the data and problem."
+    },
+    {
+      "id": "q60",
+      "number": 60,
+      "categoryId": "category-6",
+      "question": "What is the difference between supervised and unsupervised learning?",
+      "answer": "Supervised learning uses labeled examples, like predicting whether a transaction is fraudulent. Unsupervised learning uses unlabeled data to discover patterns, like grouping customers by behavior. The main difference is whether known target labels are provided during training."
+    },
+    {
+      "id": "q61",
+      "number": 61,
+      "categoryId": "category-6",
+      "question": "What is overfitting, and how do you prevent it?",
+      "answer": "Overfitting happens when a model learns training examples and noise too closely, then performs poorly on new data. I address it with validation splits, cross-validation, regularization, early stopping, and controlling model complexity."
+    },
+    {
+      "id": "q62",
+      "number": 62,
+      "categoryId": "category-6",
+      "question": "Have you worked with deep learning frameworks such as PyTorch or TensorFlow?",
+      "answer": "Yes, I've worked with PyTorch and TensorFlow, especially for NLP and deep learning. I've used Transformer-based models for classification, intent detection, and named entity recognition, and Hugging Face for pretrained models and fine-tuning workflows."
+    },
+    {
+      "id": "q63",
+      "number": 63,
+      "categoryId": "category-6",
+      "question": "Have you worked with large language models?",
+      "answer": "Yes, I've worked extensively with LLMs including GPT, Claude, Gemini, Llama, Mistral, and Sonar. My experience includes LLM integration, RAG, tool calling, agent workflows, prompt optimization, and evaluation."
+    },
+    {
+      "id": "q64",
+      "number": 64,
+      "categoryId": "category-6",
+      "question": "What is Retrieval-Augmented Generation (RAG)?",
+      "answer": "RAG means retrieving relevant information from external sources and giving it to a language model as context before it answers. It helps with current or private knowledge and makes answers more grounded in the source material."
+    },
+    {
+      "id": "q65",
+      "number": 65,
+      "categoryId": "category-6",
+      "question": "Have you built RAG-based applications?",
+      "answer": "Yes. RAG has been a major part of my work at HCLTech and Perplexity. I've worked on ingestion, chunking, embeddings, vector and hybrid search, reranking, generation, and retrieval evaluation."
+    },
+    {
+      "id": "q66",
+      "number": 66,
+      "categoryId": "category-6",
+      "question": "What is the difference between fine-tuning and RAG?",
+      "answer": "Fine-tuning updates model weights using training examples to change its behavior on a task. RAG leaves the model weights unchanged and supplies retrieved information at inference time. RAG is useful for changing knowledge; fine-tuning is useful for task-specific behavior."
+    },
+    {
+      "id": "q67",
+      "number": 67,
+      "categoryId": "category-6",
+      "question": "Have you worked with LangChain or LangGraph?",
+      "answer": "Yes, I've used both. LangChain helps connect models with retrievers, prompts, and tools. LangGraph helps build stateful, multi-step agent workflows with controlled execution. I've used them in developer-assistant and research systems."
+    },
+    {
+      "id": "q68",
+      "number": 68,
+      "categoryId": "category-6",
+      "question": "What are embeddings, and why are they useful?",
+      "answer": "Embeddings are numerical vectors representing the meaning of text or other data. Semantically similar phrases can have similar vectors even if they use different words. That's why embeddings are useful for semantic search and RAG."
+    },
+    {
+      "id": "q69",
+      "number": 69,
+      "categoryId": "category-6",
+      "question": "Which vector databases have you worked with?",
+      "answer": "I've worked with FAISS, Pinecone, and Azure AI Search for embedding-based retrieval. I'm also familiar with hybrid search combining vector similarity with keyword methods such as BM25."
+    },
+    {
+      "id": "q70",
+      "number": 70,
+      "categoryId": "category-6",
+      "question": "What is an AI agent?",
+      "answer": "An AI agent is a system that uses a model to decide what steps or tools to use to complete a task. For example, it might search, retrieve documents, analyze results, and produce an answer rather than just responding in one step."
+    },
+    {
+      "id": "q71",
+      "number": 71,
+      "categoryId": "category-6",
+      "question": "Have you worked with multi-agent systems?",
+      "answer": "Yes, multi-agent workflows are a key part of my Perplexity work. Complex tasks can be divided into research, retrieval, and analysis steps. I've worked with LangGraph, tool orchestration, and structured outputs to coordinate those components."
+    },
+    {
+      "id": "q72",
+      "number": 72,
+      "categoryId": "category-6",
+      "question": "How do you reduce hallucinations in LLM applications?",
+      "answer": "I start with reliable retrieval and source grounding, then use clear prompts, response validation, and evaluation. Tools like RAGAS and DeepEval help identify unsupported claims and whether the issue is retrieval or generation."
+    },
+    {
+      "id": "q73",
+      "number": 73,
+      "categoryId": "category-6",
+      "question": "Which cloud platforms have you worked with — AWS, Azure, or GCP?",
+      "answer": "My strongest cloud experience is AWS and Azure. On AWS I've used S3, EC2, Lambda, SageMaker, EKS, and CloudWatch. On Azure I've used Azure OpenAI, Azure AI Search, Storage, Azure ML, and AKS."
+    },
+    {
+      "id": "q74",
+      "number": 74,
+      "categoryId": "category-6",
+      "question": "Have you worked with Docker or Kubernetes?",
+      "answer": "Yes. I use Docker to package applications and dependencies consistently. I've also worked with Kubernetes-based environments, including AWS EKS and Azure AKS, for deploying and managing containerized AI services."
+    },
+    {
+      "id": "q75",
+      "number": 75,
+      "categoryId": "category-6",
+      "question": "Have you worked with CI/CD pipelines for ML applications?",
+      "answer": "Yes, I've worked with CI/CD and MLOps processes, including version control, automated checks, container builds, validation, and deployment. I've also used MLflow for experiment tracking and model versioning."
+    },
+    {
+      "id": "q76",
+      "number": 76,
+      "categoryId": "category-7",
+      "question": "Where are you currently located?",
+      "answer": "I'm currently based in South San Francisco, California."
+    },
+    {
+      "id": "q77",
+      "number": 77,
+      "categoryId": "category-7",
+      "question": "What is your current address?",
+      "answer": "I'm based in South San Francisco, California. If a full residential address is needed for official documentation or onboarding, I can provide it securely at the appropriate stage."
+    },
+    {
+      "id": "q78",
+      "number": 78,
+      "categoryId": "category-7",
+      "question": "Are you authorized to work in the United States?",
+      "answer": "Yes, absolutely. I'm a U.S. lawful permanent resident and fully authorized to work in the United States."
+    },
+    {
+      "id": "q79",
+      "number": 79,
+      "categoryId": "category-7",
+      "question": "Do you require visa sponsorship now or in the future?",
+      "answer": "No, I don't require employer visa sponsorship now or in the future. I'm a green card holder with permanent work authorization."
+    },
+    {
+      "id": "q80",
+      "number": 80,
+      "categoryId": "category-7",
+      "question": "Are you currently on OPT, H-1B, or a green card?",
+      "answer": "I'm a green card holder, so I'm a lawful permanent resident. I'm not on OPT or H-1B and don't need sponsorship."
+    },
+    {
+      "id": "q81",
+      "number": 81,
+      "categoryId": "category-7",
+      "question": "Are you open to relocating for the right opportunity?",
+      "answer": "Yes, I'm open to relocating for the right opportunity. I'm based in California, but the role, team, and technical work matter most to me. I'd want to understand the location requirements and timeline."
+    },
+    {
+      "id": "q82",
+      "number": 82,
+      "categoryId": "category-7",
+      "question": "What is your preferred work location?",
+      "answer": "California would be convenient because I'm in South San Francisco, but I'm flexible and open to other locations for a strong AI engineering opportunity."
+    },
+    {
+      "id": "q83",
+      "number": 83,
+      "categoryId": "category-7",
+      "question": "Are you comfortable with onsite, hybrid, or remote positions?",
+      "answer": "I'm comfortable with onsite, hybrid, or remote work. I'm flexible depending on the company's needs, and my priority is the right team and role."
+    },
+    {
+      "id": "q84",
+      "number": 84,
+      "categoryId": "category-7",
+      "question": "Are you open to W-2, C2C, or 1099 contract opportunities?",
+      "answer": "Both W-2 and C2C can work for me, and I'm open to discussing other contract arrangements. My preference is a full-time W-2 position because I'm looking for long-term stability and growth."
+    },
+    {
+      "id": "q85",
+      "number": 85,
+      "categoryId": "category-7",
+      "question": "Do you prefer full-time employment or contract positions?",
+      "answer": "My preference is a full-time W-2 role where I can grow with the team, but I'm open to contract work if the project and overall fit are strong."
+    },
+    {
+      "id": "q86",
+      "number": 86,
+      "categoryId": "category-7",
+      "question": "What is your expected annual salary?",
+      "answer": "For a full-time role, I'm generally targeting $150,000 to $180,000 annually. I'm flexible depending on responsibilities, location, the team, and the overall package. Finding the right technical fit is important to me too."
+    },
+    {
+      "id": "q87",
+      "number": 87,
+      "categoryId": "category-7",
+      "question": "What is your expected hourly or weekly rate for contract positions?",
+      "answer": "For contract work, I'm generally targeting around $72 to $86 per hour, depending on the scope and responsibilities. At 40 hours a week, that's roughly $2,880 to $3,440 weekly, and I'm flexible for a strong fit."
+    },
+    {
+      "id": "q88",
+      "number": 88,
+      "categoryId": "category-7",
+      "question": "What was your previous salary or compensation?",
+      "answer": "I'd prefer to keep my previous compensation private at this stage, if that's okay. For my next full-time role, I'm targeting around $150,000 to $180,000 depending on the responsibilities and total package. I'm happy to discuss expectations as we move forward."
+    },
+    {
+      "id": "q89",
+      "number": 89,
+      "categoryId": "category-7",
+      "question": "What is your notice period?",
+      "answer": "My current contract ends in the next two weeks, so I should be available once it finishes. I wouldn't need a long notice period beyond that."
+    },
+    {
+      "id": "q90",
+      "number": 90,
+      "categoryId": "category-7",
+      "question": "How soon would you be available to join?",
+      "answer": "I should be available in approximately two weeks, once my current contract ends. If onboarding or relocation is involved, I'm happy to coordinate the timeline."
+    },
+    {
+      "id": "q91",
+      "number": 91,
+      "categoryId": "category-7",
+      "question": "What is your availability for interviews, and which timezone do you use?",
+      "answer": "I'm based in California and generally schedule interviews in Pacific Time. My schedule is fairly flexible, and I can coordinate around current work commitments. Feel free to share a few available slots."
+    },
+    {
+      "id": "q92",
+      "number": 92,
+      "categoryId": "category-8",
+      "question": "Why are you currently looking for a new opportunity?",
+      "answer": "My current Perplexity contract is coming to an end in the next two weeks. I've really enjoyed the work on multi-agent research and RAG, and now I'm looking for a long-term full-time opportunity with more ownership."
+    },
+    {
+      "id": "q93",
+      "number": 93,
+      "categoryId": "category-8",
+      "question": "What type of AI/ML roles are you targeting?",
+      "answer": "I'm targeting AI/ML Engineer, Generative AI Engineer, LLM Engineer, and Applied AI Engineer roles, especially ones involving LLMs, RAG, NLP, AI agents, and production applications. I enjoy hands-on engineering."
+    },
+    {
+      "id": "q94",
+      "number": 94,
+      "categoryId": "category-8",
+      "question": "What motivates you professionally?",
+      "answer": "I enjoy solving difficult technical problems and seeing the results help real users. Improving retrieval so people get better answers faster is especially satisfying. I also like learning and collaborating with strong engineers."
+    },
+    {
+      "id": "q95",
+      "number": 95,
+      "categoryId": "category-8",
+      "question": "Why are you interested in this particular position?",
+      "answer": "From what you've shared, the role sounds aligned with my Python, LLM, RAG, and production AI experience. I'm interested in the technical challenges, the team, and the chance to contribute to meaningful products. I'd love to hear more about the projects."
+    },
+    {
+      "id": "q96",
+      "number": 96,
+      "categoryId": "category-8",
+      "question": "Are you currently interviewing with other companies?",
+      "answer": "I'm actively exploring opportunities because my contract is ending soon. I'm having conversations with recruiters and focusing on roles that align with my AI/ML background and long-term goals."
+    },
+    {
+      "id": "q97",
+      "number": 97,
+      "categoryId": "category-8",
+      "question": "Do you have any competing offers or final-round interviews?",
+      "answer": "I'm exploring opportunities, but I'd prefer to keep the details of other interview processes private for now. I'll communicate clearly if my availability or timeline changes. If I have a concrete offer or final-round interview, I'll answer that accurately."
+    },
+    {
+      "id": "q98",
+      "number": 98,
+      "categoryId": "category-8",
+      "question": "How do you explain technical concepts to nontechnical stakeholders?",
+      "answer": "I start with the business problem and explain the idea in simple terms. For example, instead of explaining vector embeddings mathematically, I'd say we're helping a system find information by meaning rather than exact keywords. I use examples and check for understanding."
+    },
+    {
+      "id": "q99",
+      "number": 99,
+      "categoryId": "category-8",
+      "question": "How do you handle disagreements with teammates?",
+      "answer": "I listen to the other person's perspective first. If we disagree technically, I prefer to compare options using data, experiments, or a small proof of concept. The goal is the best outcome for the project, not winning an argument."
+    },
+    {
+      "id": "q100",
+      "number": 100,
+      "categoryId": "category-8",
+      "question": "How do you manage working remotely?",
+      "answer": "Communication and ownership are key. I organize tasks, share progress, raise blockers early, and document work so teammates can follow it. I also make time for important discussions."
+    },
+    {
+      "id": "q101",
+      "number": 101,
+      "categoryId": "category-8",
+      "question": "How do you prioritize multiple tasks with tight deadlines?",
+      "answer": "I identify which tasks have the highest impact and which ones block others. Then I break work into smaller steps and prioritize. If deadlines conflict, I communicate early and align with the team rather than overpromise."
+    },
+    {
+      "id": "q102",
+      "number": 102,
+      "categoryId": "category-8",
+      "question": "Have you mentored junior engineers?",
+      "answer": "I've collaborated closely with engineers in small teams and enjoy explaining approaches and helping troubleshoot. I wouldn't claim a formal management or mentoring title without that responsibility, but I do enjoy knowledge sharing."
+    },
+    {
+      "id": "q103",
+      "number": 103,
+      "categoryId": "category-8",
+      "question": "How do you handle unclear project requirements?",
+      "answer": "First I clarify the problem and what success looks like. Then I identify assumptions, break down the work, and ask questions. For AI projects, a small proof of concept or experiment often helps validate the direction early."
+    },
+    {
+      "id": "q104",
+      "number": 104,
+      "categoryId": "category-8",
+      "question": "How do you stay updated with new AI/ML technologies?",
+      "answer": "I follow research papers, technical blogs, documentation, and open-source projects. I also try new tools through small experiments, focusing on whether they solve a real problem rather than adopting them just because they're new."
+    },
+    {
+      "id": "q105",
+      "number": 105,
+      "categoryId": "category-8",
+      "question": "How did you find your previous job opportunities or connect with recruiters?",
+      "answer": "My Accenture internship came through a referral after I built an ML portfolio, participated in coding competitions, and contributed to open source. After moving to the U.S. and receiving work authorization, I explored opportunities and joined HCLTech. Later, I found the Perplexity contract opportunity, which aligned with my interest in LLMs and advanced AI."
+    },
+    {
+      "id": "q106",
+      "number": 106,
+      "categoryId": "category-9",
+      "question": "Do you have any questions for me?",
+      "answer": "Absolutely. Could you tell me more about the AI team and its main projects? What would success look like in the first three to six months? And what are the next steps in the interview process?"
+    }
+  ]
+}
