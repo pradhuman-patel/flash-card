@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft, ChevronLeft, ChevronRight, PenLine } from "lucide-react";
 import { AnswerEditor } from "@/components/AnswerEditor";
+import { AnswerText } from "@/components/AnswerText";
 import { CategoryBadge, StorageWarning, Toast } from "@/components/ui";
 import { QUESTIONS } from "@/data/questions";
 import type { Question } from "@/data/questions";
@@ -133,7 +134,7 @@ export function QuestionView({ question }: { question: Question }) {
           <div aria-busy className="mt-3 min-h-40" />
         ) : answer ? (
           <div className="mt-1 text-[15px] leading-relaxed break-words whitespace-pre-wrap sm:mt-3 sm:text-base sm:leading-[1.8] md:text-lg">
-            {answer}
+            <AnswerText questionId={question.id} text={answer} />
           </div>
         ) : (
           <div className="mt-4 rounded-3xl border border-dashed border-line p-8 text-center">

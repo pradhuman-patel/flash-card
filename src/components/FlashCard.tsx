@@ -4,6 +4,7 @@ import { memo, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Maximize2, PenLine } from "lucide-react";
+import { AnswerText } from "@/components/AnswerText";
 import { CategoryBadge } from "@/components/ui";
 import type { Question } from "@/data/questions";
 
@@ -134,7 +135,7 @@ export const FlashCard = memo(function FlashCard({
                 aria-label={`Answer to ${label}`}
                 className="mt-1 min-h-0 flex-1 cursor-text overflow-y-auto rounded-lg px-2 text-sm leading-relaxed break-words whitespace-pre-wrap"
               >
-                {answer}
+                <AnswerText questionId={question.id} text={answer} />
               </div>
             ) : (
               <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-3 px-1 text-center sm:px-3">
