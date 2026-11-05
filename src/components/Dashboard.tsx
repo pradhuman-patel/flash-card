@@ -24,7 +24,7 @@ import {
 import type { Filters } from "@/lib/filter";
 
 const GRID_CLASS =
-  "grid grid-cols-1 gap-x-6 gap-y-7 min-[560px]:grid-cols-2 lg:grid-cols-3 lg:gap-x-8";
+  "grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-7 lg:grid-cols-3 lg:gap-x-8";
 
 function Header() {
   return (
@@ -273,7 +273,7 @@ export function DashboardSkeleton() {
           {Array.from({ length: 6 }, (_, index) => (
             <div
               key={index}
-              className="mt-9 h-72 rounded-3xl border border-line bg-card shadow-soft md:h-80"
+              className="mt-9 h-64 rounded-3xl border border-line bg-card shadow-soft sm:h-72 md:h-80"
             />
           ))}
         </div>

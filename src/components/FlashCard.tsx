@@ -55,7 +55,7 @@ export const FlashCard = memo(function FlashCard({
       aria-label={`Open ${label} in full view`}
       title="Open full view"
       onClick={(event) => event.stopPropagation()}
-      className="relative grid size-9 shrink-0 place-items-center rounded-full text-faint transition-colors hover:bg-accent-soft hover:text-accent-ink"
+      className="relative ml-auto grid size-9 shrink-0 place-items-center rounded-full text-faint transition-colors hover:bg-accent-soft hover:text-accent-ink"
     >
       <Maximize2 className="size-4" aria-hidden />
     </Link>
@@ -66,7 +66,7 @@ export const FlashCard = memo(function FlashCard({
       <div className="mb-3 flex">
         <CategoryBadge categoryId={question.categoryId} />
       </div>
-      <div className="flip-scene group h-72 transition-transform duration-200 hover:-translate-y-1 md:h-80">
+      <div className="flip-scene group h-64 transition-transform duration-200 hover:-translate-y-1 sm:h-72 md:h-80">
         <div className="flip-inner" data-flipped={flipped}>
           {/* Front: question */}
           <div className={FACE_CLASS} inert={flipped}>
@@ -84,7 +84,7 @@ export const FlashCard = memo(function FlashCard({
                 </span>
                 <span className="pointer-events-auto">{openLink}</span>
               </div>
-              <p className="flex flex-1 items-center justify-center px-3 text-center text-base font-semibold leading-snug md:text-lg">
+              <p className="flex flex-1 items-center justify-center px-1 text-center text-sm font-semibold leading-snug sm:px-3 sm:text-base md:text-lg">
                 {question.text}
               </p>
               <p className="pb-1 pr-2 text-right text-xs text-faint">
@@ -108,7 +108,7 @@ export const FlashCard = memo(function FlashCard({
                 {label}
               </span>
               <p
-                className="min-w-0 flex-1 truncate text-xs text-muted"
+                className="hidden min-w-0 flex-1 truncate text-xs text-muted sm:block"
                 title={question.text}
               >
                 {question.text}
@@ -126,7 +126,7 @@ export const FlashCard = memo(function FlashCard({
                 {answer}
               </div>
             ) : (
-              <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-3 px-3 text-center">
+              <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-3 px-1 text-center sm:px-3">
                 <p className="text-sm font-semibold">No answer added yet.</p>
                 <button
                   type="button"
@@ -134,14 +134,14 @@ export const FlashCard = memo(function FlashCard({
                     event.stopPropagation();
                     onEdit(question);
                   }}
-                  className="min-h-11 rounded-full bg-accent px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="min-h-11 rounded-full bg-accent px-4 text-sm font-semibold whitespace-nowrap text-white transition-opacity hover:opacity-90 sm:px-5"
                 >
                   Write Answer
                 </button>
               </div>
             )}
 
-            <div className="mt-2 flex min-h-9 items-center justify-between gap-2">
+            <div className="mt-2 flex min-h-9 items-center justify-between gap-1">
               {answer ? (
                 <button
                   type="button"
@@ -150,7 +150,7 @@ export const FlashCard = memo(function FlashCard({
                     onEdit(question);
                   }}
                   aria-label={`Edit answer to ${label}`}
-                  className="flex min-h-9 items-center gap-1.5 rounded-full border border-line px-3 text-xs font-medium transition-colors hover:bg-accent-soft"
+                  className="flex min-h-9 items-center gap-1.5 rounded-full border border-line px-2 text-xs sm:px-3 font-medium transition-colors hover:bg-accent-soft"
                 >
                   <PenLine className="size-3.5" aria-hidden />
                   Edit
@@ -166,7 +166,7 @@ export const FlashCard = memo(function FlashCard({
                   flip();
                 }}
                 aria-label={`Flip ${label} back to the question`}
-                className="min-h-9 cursor-pointer rounded-full px-2 text-xs text-faint transition-colors hover:text-ink"
+                className="min-h-9 cursor-pointer rounded-full text-xs whitespace-nowrap text-faint sm:px-2 transition-colors hover:text-ink"
               >
                 <FlipHint />
               </button>
