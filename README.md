@@ -1,6 +1,6 @@
 # AI/ML Interview Flashcards
 
-A personal flashcard site for AI/ML Engineer interview preparation: 106 questions in 9 categories, with answers you can edit. Click a card to flip it between the question and your answer.
+A personal flashcard site for AI/ML Engineer interview preparation: 106 questions in 9 categories, with answers you can edit. On a computer, click a card to flip it between the question and your answer. On a phone, tap a card to open it in a popup.
 
 ## Run locally
 
@@ -23,6 +23,8 @@ Use **Export Answers** to download a JSON backup and **Import Answers** to resto
 
 - `src/data/flashcards.json`: the questions, categories and starting answers
 - `src/data/questions.ts`: loads that file for the app
+- `src/data/highlights.ts`: the most important line of each answer, shown highlighted
+- `src/data/answerExtras.ts`: the opening and closing fillers and optional funny line shown around each answer
 - `src/lib/answers.ts`: reading and writing LocalStorage
 - `src/lib/backup.ts`: export and import validation
-- `src/components/`: the dashboard, flip card, editor and full question view
+- `src/components/`: the dashboard, flip card, question popup and editor

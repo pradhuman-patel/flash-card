@@ -1,21 +1,19 @@
 "use client";
 
 import { memo, useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { Maximize2, PenLine } from "lucide-react";
-import { AnswerText } from "@/components/AnswerText";
+import { AnswerBody } from "@/components/AnswerText";
 import { CategoryBadge } from "@/components/ui";
 import type { Question } from "@/data/questions";
 
 type FlashCardProps = {
   question: Question;
   answer: string;
-  detailHref: string;
+  onOpen: (question: Question) => void;
   onEdit: (question: Question) => void;
 };
 
-/** Matches the Tailwind `sm` breakpoint: below it, tapping a card opens the full view. */
+/** Matches the Tailwind `sm` breakpoint: below it, tapping a card opens the popup. */
 const PHONE_WIDTH_QUERY = "(max-width: 639px)";
 
 const FACE_CLASS =
@@ -33,10 +31,9 @@ function FlipHint() {
 export const FlashCard = memo(function FlashCard({
   question,
   answer,
-  detailHref,
+  onOpen,
   onEdit,
 }: FlashCardProps) {
-  const router = useRouter();
   const [flipped, setFlipped] = useState(false);
   const hasFlipped = useRef(false);
   const frontButton = useRef<HTMLButtonElement>(null);
@@ -54,22 +51,24 @@ export const FlashCard = memo(function FlashCard({
   };
 
   const handleFrontClick = () => {
-    if (window.matchMedia(PHONE_WIDTH_QUERY).matches) router.push(detailHref);
+    if (window.matchMedia(PHONE_WIDTH_QUERY).matches) onOpen(question);
     else flip();
   };
 
   const label = `Q${question.number}`;
   const openLink = (
-    <Link
-      href={detailHref}
-      prefetch={false}
-      aria-label={`Open ${label} in full view`}
-      title="Open full view"
-      onClick={(event) => event.stopPropagation()}
+    <button
+      type="button"
+      aria-label={`Open ${label} in a popup`}
+      title="Open popup"
+      onClick={(event) => {
+        event.stopPropagation();
+        onOpen(question);
+      }}
       className="relative ml-auto hidden size-9 shrink-0 place-items-center sm:grid rounded-full text-faint transition-colors hover:bg-accent-soft hover:text-accent-ink"
     >
       <Maximize2 className="size-4" aria-hidden />
-    </Link>
+    </button>
   );
 
   return (
@@ -85,7 +84,6 @@ export const FlashCard = memo(function FlashCard({
               ref={frontButton}
               type="button"
               onClick={handleFrontClick}
-              onPointerDown={() => router.prefetch(detailHref)}
               aria-label={`${label}: ${question.text} Show answer.`}
               className="absolute inset-0 cursor-pointer rounded-2xl focus-visible:-outline-offset-2 sm:rounded-3xl"
             />
@@ -135,7 +133,7 @@ export const FlashCard = memo(function FlashCard({
                 aria-label={`Answer to ${label}`}
                 className="mt-1 min-h-0 flex-1 cursor-text overflow-y-auto rounded-lg px-2 text-sm leading-relaxed break-words whitespace-pre-wrap"
               >
-                <AnswerText questionId={question.id} text={answer} />
+                <AnswerBody questionId={question.id} text={answer} />
               </div>
             ) : (
               <div className="flex min-h-0 flex-1 flex-col items-center justify-center gap-3 px-1 text-center sm:px-3">

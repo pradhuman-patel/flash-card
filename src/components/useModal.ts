@@ -26,12 +26,15 @@ export function useModal(onDismiss: () => void) {
 
   return {
     ref,
+    // React passes these events up from dialogs nested inside this one, so ignore those.
     onCancel: (event: SyntheticEvent<HTMLDialogElement>) => {
+      if (event.target !== event.currentTarget) return;
       event.preventDefault();
       onDismiss();
     },
     // Browsers can force-close a dialog on repeated Esc; stay open and ask the owner.
-    onClose: () => {
+    onClose: (event: SyntheticEvent<HTMLDialogElement>) => {
+      if (event.target !== event.currentTarget) return;
       const dialog = ref.current;
       if (dialog && !dialog.open) {
         dialog.showModal();

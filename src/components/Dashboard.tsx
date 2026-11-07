@@ -7,6 +7,7 @@ import { Download, Search, Upload, X } from "lucide-react";
 import { AnswerEditor } from "@/components/AnswerEditor";
 import { ConfirmDialog } from "@/components/ConfirmDialog";
 import { FlashCard } from "@/components/FlashCard";
+import { QuestionPopup } from "@/components/QuestionPopup";
 import { StorageWarning, ThemeToggle, Toast } from "@/components/ui";
 import { CATEGORIES, QUESTIONS } from "@/data/questions";
 import type { Question } from "@/data/questions";
@@ -73,6 +74,7 @@ export function Dashboard() {
   const [filters, setFilters] = useState<Filters>(() => readFilters(searchParams));
   const deferredFilters = useDeferredValue(filters);
   const [editing, setEditing] = useState<Question | null>(null);
+  const [opened, setOpened] = useState<Question | null>(null);
   const [pendingImport, setPendingImport] = useState<{
     answers: Answers;
     overwrites: number;
@@ -84,7 +86,6 @@ export function Dashboard() {
     () => filterQuestions(answers, deferredFilters),
     [answers, deferredFilters],
   );
-  const search = filtersToSearch(deferredFilters);
 
   const updateFilters = (changes: Partial<Filters>) => {
     const next = { ...filters, ...changes };
@@ -94,6 +95,15 @@ export function Dashboard() {
   };
 
   const handleEdit = useCallback((question: Question) => setEditing(question), []);
+  const handleOpen = useCallback((question: Question) => setOpened(question), []);
+
+  const closePopup = () => {
+    // Previous and Next may have moved on, so bring the last viewed card into view.
+    if (opened) {
+      document.getElementById(opened.id)?.scrollIntoView({ block: "nearest" });
+    }
+    setOpened(null);
+  };
 
   const applyImport = (incoming: Answers) => {
     setPendingImport(null);
@@ -214,7 +224,7 @@ export function Dashboard() {
                 key={question.id}
                 question={question}
                 answer={answers?.[question.id] ?? ""}
-                detailHref={`/questions/${question.id}${search}`}
+                onOpen={handleOpen}
                 onEdit={handleEdit}
               />
             ))}
@@ -234,6 +244,18 @@ export function Dashboard() {
           </div>
         )}
       </main>
+
+      {opened && (
+        <QuestionPopup
+          question={opened}
+          answer={answers?.[opened.id] ?? ""}
+          // An edit can drop this question out of a search, so fall back to the full list.
+          sequence={visible.some((q) => q.id === opened.id) ? visible : QUESTIONS}
+          onNavigate={setOpened}
+          onClose={closePopup}
+          onSaved={(message) => showToast(message)}
+        />
+      )}
 
       {editing && (
         <AnswerEditor
