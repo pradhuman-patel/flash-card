@@ -1,10 +1,13 @@
 import { DEFAULT_ANSWERS } from "@/data/questions";
+import { REPLACED_ANSWERS } from "@/data/replacedAnswers";
 
 export type Answers = Record<string, string>;
 
 const STORAGE_KEY = "aiml-flashcards:answers:v2";
 const LEGACY_STORAGE_KEY = "aiml-flashcards:answers:v1";
 const CORRUPT_BACKUP_KEY = `${STORAGE_KEY}:unreadable-backup`;
+/** The file answers this browser last saw, to tell file updates apart from your edits. */
+const SEEN_DEFAULTS_KEY = "aiml-flashcards:seen-file-answers:v1";
 
 let cache: Answers | null = null;
 let warning: string | null = null;
@@ -48,6 +51,43 @@ function initialAnswers(): Answers {
   return answers;
 }
 
+function rememberDefaults() {
+  const current = JSON.stringify(DEFAULT_ANSWERS);
+  if (window.localStorage.getItem(SEEN_DEFAULTS_KEY) !== current) {
+    window.localStorage.setItem(SEEN_DEFAULTS_KEY, current);
+  }
+}
+
+/**
+ * Brings in answers that changed in flashcards.json since this browser saved its
+ * copy, but only where it still has the old file answer. Edited answers are kept.
+ */
+function applyFileUpdates(answers: Answers): Answers {
+  try {
+    const raw = window.localStorage.getItem(SEEN_DEFAULTS_KEY);
+    // Browsers from before this record existed saw the original file answers.
+    const seen = (raw !== null && parse(raw)) || {
+      ...DEFAULT_ANSWERS,
+      ...REPLACED_ANSWERS,
+    };
+    const updated = { ...answers };
+    let changed = false;
+    for (const [id, answer] of Object.entries(DEFAULT_ANSWERS)) {
+      if (seen[id] !== answer && updated[id] === seen[id]) {
+        updated[id] = answer;
+        changed = true;
+      }
+    }
+    if (changed) {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    }
+    rememberDefaults();
+    return updated;
+  } catch {
+    return answers;
+  }
+}
+
 function load(): Answers {
   warning = null;
   let raw: string | null;
@@ -63,6 +103,7 @@ function load(): Answers {
     const answers = initialAnswers();
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(answers));
+      rememberDefaults();
     } catch {
       warning =
         "Browser storage is unavailable, so answers can't be saved in this window.";
@@ -71,7 +112,7 @@ function load(): Answers {
   }
 
   const answers = parse(raw);
-  if (answers) return answers;
+  if (answers) return applyFileUpdates(answers);
 
   // Keep the unreadable data rather than letting the next save destroy it.
   warning = `Your saved answers couldn't be read. The original data was kept in browser storage under "${CORRUPT_BACKUP_KEY}".`;

@@ -3,7 +3,7 @@
  * text exactly. A line that no longer appears after an edit is ignored.
  */
 export const KEY_LINES: Record<string, string> = {
-  q1: "I'm an AI/ML Engineer with around five years of professional experience, mainly in Python, machine learning, NLP, and more recently generative AI, RAG, and AI agents.",
+  q1: "So I'm an AI/ML engineer with around five years of professional experience, mainly in Python, machine learning, and NLP, and more recently in generative AI, RAG, and AI agents.",
   q2: "My career has evolved from traditional ML toward production generative AI.",
   q3: "I have around five years of professional AI/ML experience, starting with my Accenture internship in March 2020.",
   q4: "Pretty much my entire professional career has been focused on AI and machine learning.",

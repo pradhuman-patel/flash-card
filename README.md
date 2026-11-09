@@ -13,7 +13,7 @@ Then open <http://localhost:3000>.
 
 ## Where your answers are stored
 
-Questions and starting answers come from `src/data/flashcards.json`. The first time a browser opens the site, it copies those answers into LocalStorage under the key `aiml-flashcards:answers:v2`, stored by question ID (`q1` to `q106`). From then on the browser's copy wins, so your edits and deletions stick, and later changes to the JSON file's answers won't replace them. Clearing site data removes your edits and goes back to the file's answers.
+Questions and starting answers come from `src/data/flashcards.json`. The first time a browser opens the site, it copies those answers into LocalStorage under the key `aiml-flashcards:answers:v2`, stored by question ID (`q1` to `q106`). From then on the browser's copy wins, so your edits and deletions stick. When an answer changes in the JSON file, a browser picks up the new version only if it still has the old one, so answers you edited in the app are never replaced. Clearing site data removes your edits and goes back to the file's answers.
 
 **Privacy:** the answers in `flashcards.json` are part of the source code, so anyone who can see this repository or open the site can read them.
 
