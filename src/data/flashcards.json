@@ -89,7 +89,7 @@
       "number": 6,
       "categoryId": "category-1",
       "question": "What are your primary technical skills?",
-      "answer": "My strongest language is Python, and my main focus is AI/ML engineering, especially LLMs, RAG, NLP, and AI agents. I've used LangChain, LangGraph, LlamaIndex, FAISS, Pinecone, FastAPI, SQL, PostgreSQL, Redis, AWS, Azure, Docker, and Kubernetes."
+      "answer": "My strongest programming language is Python, and my primary focus is AI/ML engineering, particularly Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Natural Language Processing (NLP), and AI agents. I have hands-on experience with AI frameworks such as LangChain, LangGraph, and LlamaIndex, along with vector search technologies like FAISS and Pinecone. For backend development, I work with FastAPI and databases such as PostgreSQL, SQL, and Redis. I also have experience with cloud platforms like AWS and Azure, as well as DevOps and deployment tools such as Docker and Kubernetes."
     },
     {
       "id": "q7",

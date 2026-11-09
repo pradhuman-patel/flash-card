@@ -8,7 +8,7 @@ export const KEY_LINES: Record<string, string> = {
   q3: "I have around five years of professional AI/ML experience, starting with my Accenture internship in March 2020.",
   q4: "Pretty much my entire professional career has been focused on AI and machine learning.",
   q5: "Each move was a natural step toward more advanced AI engineering.",
-  q6: "My strongest language is Python, and my main focus is AI/ML engineering, especially LLMs, RAG, NLP, and AI agents.",
+  q6: "My strongest programming language is Python, and my primary focus is AI/ML engineering, particularly Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Natural Language Processing (NLP), and AI agents.",
   q7: "Python is definitely my strongest language.",
   q8: "I'd say my strongest area is building end-to-end LLM applications, especially RAG pipelines, intelligent search, and agent workflows.",
   q9: "Most of my work has involved intelligent search, document understanding, developer assistants, and AI-powered research systems.",
